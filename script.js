@@ -302,17 +302,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger grand background celebratory state
         document.body.classList.add('celebration-mode');
 
-        // Spawn extra floating hearts celebration
-        for (let i = 0; i < 40; i++) {
+    // --- 9. Romantic Promises Generator ---
+    const promises = [
+        `"I promise to choose you, every single day, without a second thought."`,
+        `"I promise to listen to your quietest thoughts and cherish your happiest smiles."`,
+        `"In a world full of noise, I promise to be your calm and peaceful place."`,
+        `"I promise to stand by you through every bug, error, and victory in life."`,
+        `"You are my favorite notification, my favorite conversation, and my favorite person forever."`
+    ];
+    let promiseIdx = 0;
+    const promiseText = document.getElementById('promise-text');
+    const nextPromiseBtn = document.getElementById('next-promise-btn');
+
+    if (nextPromiseBtn && promiseText) {
+        nextPromiseBtn.addEventListener('click', () => {
+            promiseIdx = (promiseIdx + 1) % promises.length;
+            promiseText.style.opacity = '0';
             setTimeout(() => {
-                const heart = document.createElement('div');
-                heart.className = 'floating-heart-bg';
-                heart.innerText = ['❤️', '💖', '✨'][Math.floor(Math.random() * 3)];
-                heart.style.left = `${Math.random() * 100}%`;
-                heart.style.fontSize = `${Math.random() * 1.5 + 1}rem`;
-                heart.style.animationDuration = `${Math.random() * 5 + 4}s`;
-                particlesContainer.appendChild(heart);
-            }, i * 150);
-        }
-    });
+                promiseText.innerText = promises[promiseIdx];
+                promiseText.style.opacity = '1';
+            }, 250);
+        });
+    }
 });

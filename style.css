@@ -374,11 +374,61 @@ body {
     box-shadow: 0 0 20px rgba(255, 143, 171, 0.3);
 }
 
-.letter-salutation {
-    font-family: var(--font-handwriting);
-    font-size: 2.8rem;
+.emotional-quote {
+    font-style: italic;
+    font-size: 1.15rem;
     color: var(--deep-rose);
-    margin-bottom: 1rem;
+    background: rgba(255, 182, 200, 0.15);
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--romantic-rose);
+    border-radius: 12px;
+    margin: 0.8rem 0;
+}
+
+.promises-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.section-title-romantic {
+    font-size: 1.8rem;
+    color: var(--deep-rose);
+}
+
+.promise-box {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px dashed var(--romantic-rose);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.promise-text {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.promise-btn {
+    background: rgba(255, 143, 171, 0.2);
+    color: var(--deep-rose);
+    border: 1px solid var(--romantic-rose);
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.promise-btn:hover {
+    background: var(--romantic-rose);
+    color: var(--white);
 }
 
 .letter-body {
