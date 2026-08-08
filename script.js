@@ -295,12 +295,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 8. Final Surprise Reveal & Celebration FX ---
-    openHeartBtn.addEventListener('click', () => {
-        openHeartBtn.style.display = 'none';
-        finalReveal.classList.remove('hidden');
+    if (openHeartBtn && finalReveal) {
+        openHeartBtn.addEventListener('click', () => {
+            openHeartBtn.style.display = 'none';
+            finalReveal.classList.remove('hidden');
 
-        // Trigger grand background celebratory state
-        document.body.classList.add('celebration-mode');
+            // Trigger grand background celebratory state
+            document.body.classList.add('celebration-mode');
+        });
+    }
 
     // --- 9. Romantic Promises Generator ---
     const promises = [
@@ -325,3 +328,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
